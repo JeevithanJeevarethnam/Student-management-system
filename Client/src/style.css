@@ -10,6 +10,64 @@ body {
     background: #0b1f3a;
 }
 
+.login-container {
+    width: min(380px, calc(100% - 40px));
+    margin: 12vh auto;
+    padding: 40px;
+    border-radius: 12px;
+    background: white;
+    color: #0f172a;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+.login-container h1 {
+    margin-bottom: 25px;
+    font-size: 26px;
+}
+
+.login-container .login-message {
+    display: none;
+    margin: 0 0 15px;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.login-container .login-message.error,
+.login-container .login-message.success {
+    display: block;
+}
+
+.login-container .login-message.error {
+    color: #b91c1c;
+    background: #fef2f2;
+}
+
+.login-container .login-message.success {
+    color: #166534;
+    background: #f0fdf4;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 13px;
+    border: 0;
+    border-radius: 6px;
+    color: white;
+    background: #2563eb;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 
 /* =========================
    NAVIGATION BAR
@@ -300,6 +358,29 @@ body {
     margin-bottom: 25px;
 }
 
+.login-box .login-message {
+    display: none;
+    margin: 0 0 15px;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.login-box .login-message.error,
+.login-box .login-message.success {
+    display: block;
+}
+
+.login-box .login-message.error {
+    color: #b91c1c;
+    background: #fef2f2;
+}
+
+.login-box .login-message.success {
+    color: #166534;
+    background: #f0fdf4;
+}
+
 
 /* Login Inputs */
 
@@ -346,6 +427,11 @@ body {
 
 .login-submit:hover {
     background: #1d4ed8;
+}
+
+.login-submit:disabled {
+    cursor: wait;
+    opacity: 0.7;
 }
 
 

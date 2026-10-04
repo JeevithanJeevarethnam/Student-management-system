@@ -13,16 +13,22 @@
 
         <h1>Student Management System</h1>
 
-        <form>
+        <form id="loginForm">
+            <p id="loginMessage" class="login-message" role="alert" aria-live="polite"></p>
+
             <input
-                type="email"
-                placeholder="Email"
+                type="text"
+                id="username"
+                placeholder="Username"
+                autocomplete="username"
                 required
             >
 
             <input
                 type="password"
+                id="password"
                 placeholder="Password"
+                autocomplete="current-password"
                 required
             >
 
@@ -31,5 +37,6 @@
 
     </div>
 
+    <script type="module" src="./main.js"></script>
 </body>
 </html>
