@@ -2,13 +2,13 @@
 
 ## Run the application
 
-The frontend is in `Client` and the Express/MongoDB API is in `Server`.
+The frontend is in `Client` and the Express/MongoDB API is in `backend`.
 
-1. Create the API environment file: `cp Server/.env.example Server/.env`, then set a secure `JWT_SECRET`.
+1. Create the API environment file: `cp backend/.env.example backend/.env`, then set a secure `JWT_SECRET`.
 2. Ensure MongoDB is running locally, or replace `MONGODB_URI` with your MongoDB Atlas connection string.
 3. Install and run the API:
    ```bash
-   cd Server
+   cd backend
    npm install
    npm run dev
    ```
