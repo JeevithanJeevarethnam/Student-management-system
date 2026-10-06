@@ -6,18 +6,28 @@ The frontend is in `front end` and the Express/MongoDB API is in `backend`.
 
 1. Create the API environment file: `cp backend/.env.example backend/.env`, then set a secure `JWT_SECRET`.
 2. Ensure MongoDB is running locally, or replace `MONGODB_URI` with your MongoDB Atlas connection string.
-3. Install and run the API:
+3. Install dependencies in both apps:
    ```bash
-   cd backend
-   npm install
+   npm --prefix backend install
+   npm --prefix "front end" install
+   ```
+4. Start the frontend and API together from this directory:
+   ```bash
    npm run dev
    ```
-4. In another terminal, run the frontend:
-   ```bash
-   cd "front end"
-   npm install
-   npm run dev
-   ```
+   The frontend is available at the Vite URL (usually `http://localhost:5173`), and the API runs at `http://localhost:5000`.
+
+## Run both from one localhost address
+
+To serve the built frontend and API together from `http://localhost:5000`, run
+this command from `backend` instead of starting the two development servers:
+
+```bash
+npm run start:full
+```
+
+It builds the frontend, then Express serves it alongside `/api/*`. Run this
+again after changing frontend code. MongoDB must still be running.
 
 The login form calls `POST http://localhost:5000/api/auth/login`. Set `VITE_API_URL` in `front end/.env` when deploying the API elsewhere.
 
