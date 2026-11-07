@@ -1,0 +1,13 @@
+# macOS files
+.DS_Store
+
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
