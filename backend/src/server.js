@@ -9,7 +9,7 @@ import authRoutes from './routes/auth.js';
 
 const { PORT = 5000, MONGODB_URI, JWT_SECRET, CLIENT_URL = 'http://localhost:5173' } = process.env;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const frontendDist = path.resolve(__dirname, '../../front end/dist');
+const frontendDist = path.resolve(__dirname, '../../frontend/dist');
 
 if (!MONGODB_URI || !JWT_SECRET) {
   console.error('MONGODB_URI and JWT_SECRET must be set in backend/.env.');
