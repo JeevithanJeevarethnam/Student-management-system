@@ -9,7 +9,7 @@ The frontend is in `front end` and the Express/MongoDB API is in `backend`.
 3. Install dependencies in both apps:
    ```bash
    npm --prefix backend install
-   npm --prefix "front end" install
+   npm --prefix frontend install
    ```
 4. Start the frontend and API together from this directory:
    ```bash
