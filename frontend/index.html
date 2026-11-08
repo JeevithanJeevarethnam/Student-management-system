@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management System - Admin Dashboard</title>
+
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span class="logo-mark">◈</span>
+            <span>Student Management System</span>
+        </div>
+
+        <nav>
+            <a href="#" id="navHome">Home</a>
+            <a href="#" id="navStudents">Students</a>
+            <a href="#" id="navCourses">Courses</a>
+            <a href="#" id="navAbout">About</a>
+
+            <button id="loginBtn" class="login-btn">
+                Sign In
+            </button>
+
+            <div id="authNavActions" class="auth-nav-actions"></div>
+        </nav>
+
+    </header>
+
+
+    <!-- Main Content Container -->
+    <main>
+
+        <!-- Public Landing Hero Section -->
+        <section class="hero" id="heroSection">
+
+            <div class="hero-content">
+
+                <div class="hero-pill">
+                    <span>◈</span>
+                    <span>Academic Management Suite</span>
+                </div>
+
+                <h1>
+                    Modern Student Directory &amp; <br>
+                    <span class="hero-highlight">Academic Administration</span>
+                </h1>
+
+                <p>
+                    Streamline student records, monitor departmental enrollments,
+                    and maintain academic status in one unified, high-performance platform.
+                </p>
+
+                <div class="hero-buttons">
+                    <button id="heroViewStudentsBtn" class="primary-btn">
+                        <span>Directory Access</span>
+                        <span>→</span>
+                    </button>
+
+                    <button id="heroLearnMoreBtn" class="secondary-btn">
+                        Explore Features
+                    </button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Public Features Section -->
+        <section class="features" id="featuresSection">
+
+            <span class="section-tag">Platform Capabilities</span>
+            <h2>Designed for Academic Excellence</h2>
+            <p class="features-subtitle">
+                Comprehensive operational controls for administrators, faculty, and academic departments.
+            </p>
+
+            <div class="feature-container">
+
+                <div class="feature-card">
+                    <div class="feature-icon-box">🎓</div>
+                    <h3>Student Directory</h3>
+                    <p>
+                        Centralized registry covering student profiles, contact credentials,
+                        active enrollment status, and academic timelines.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-box">📚</div>
+                    <h3>Course Management</h3>
+                    <p>
+                        Departmental curriculum organization, course assignment mapping,
+                        and academic progress tracking across programs.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-box">🛡️</div>
+                    <h3>Secure Role Access</h3>
+                    <p>
+                        Role-based permissions separating administrative operations from
+                        faculty review workflows with JWT-authenticated sessions.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Authenticated Student Management Dashboard -->
+        <section id="appDashboard" class="dashboard-section" style="display: none;">
+            <!-- Rendered dynamically by dashboard.js -->
+        </section>
+
+    </main>
+
+
+    <!-- Login Popup Modal -->
+    <div id="loginModal" class="login-modal">
+
+        <div class="login-box">
+
+            <button id="closeLogin" class="close-btn" aria-label="Close login dialog">
+                ×
+            </button>
+
+            <h2>Staff Sign In</h2>
+
+            <p>Access the student management console</p>
+
+            <form id="loginForm">
+
+                <p id="loginMessage" class="login-message" role="alert" aria-live="polite"></p>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter your username"
+                    autocomplete="username"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button type="submit" class="login-submit">
+                    Sign In
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- Add / Edit Student Modal Dialog -->
+    <div id="studentModal" class="student-modal" style="display: none;">
+
+        <div class="modal-card">
+
+            <button id="closeStudentModal" class="close-btn" aria-label="Close student dialog">
+                ×
+            </button>
+
+            <h2 id="studentModalTitle">Add New Student</h2>
+
+            <p class="modal-subtitle">Enter student academic and enrollment details</p>
+
+            <p id="studentModalMessage" class="modal-message" role="alert" aria-live="polite"></p>
+
+            <form id="studentForm">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="studentCustomId">Student ID (Optional)</label>
+                        <input
+                            type="text"
+                            id="studentCustomId"
+                            placeholder="e.g. STU-2026-006"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentName">Full Name *</label>
+                        <input
+                            type="text"
+                            id="studentName"
+                            placeholder="e.g. Jane Doe"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="studentEmail">Email Address *</label>
+                        <input
+                            type="email"
+                            id="studentEmail"
+                            placeholder="jane.doe@university.edu"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentDepartment">Department *</label>
+                        <select id="studentDepartment" required>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Information Technology">Information Technology</option>
+                            <option value="Electrical Engineering">Electrical Engineering</option>
+                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                            <option value="Business Administration">Business Administration</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="studentStatus">Enrollment Status</label>
+                        <select id="studentStatus">
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentEnrollmentDate">Enrollment Date</label>
+                        <input
+                            type="date"
+                            id="studentEnrollmentDate"
+                        >
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" id="cancelStudentBtn" class="secondary-btn cancel-btn">
+                        Cancel
+                    </button>
+                    <button type="submit" class="primary-btn save-btn">
+                        Save Student
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script type="module" src="/src/main.js"></script>
+
+</body>
+
+</html>
