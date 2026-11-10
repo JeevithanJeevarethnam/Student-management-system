@@ -11,3 +11,16 @@ dist/
 .env
 .env.*
 !.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Phase 2 backup
+frontend_phase2_backup/
